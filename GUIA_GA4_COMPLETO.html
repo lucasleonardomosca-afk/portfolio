@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Didático GA4 - PDF</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        h1 { color: #1a73e8; font-size: 2.5em; margin-bottom: 10px; text-align: center; }
+        h2 { color: #1a73e8; font-size: 1.8em; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #1a73e8; padding-bottom: 10px; }
+        h3 { color: #3b4fc7; font-size: 1.3em; margin-top: 20px; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #666; font-size: 1.1em; margin-bottom: 30px; }
+        .info-box { background-color: #f0f4ff; border-left: 4px solid #1a73e8; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .step { background-color: #f9f9f9; border: 1px solid #e0e0e0; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        code { background-color: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; }
+        pre { background-color: #f0f0f0; padding: 15px; border-radius: 4px; overflow-x: auto; margin: 15px 0; }
+        ul, ol { margin-left: 20px; margin-top: 10px; margin-bottom: 10px; }
+        li { margin-bottom: 8px; }
+        .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 3px; }
+        .success { color: #28a745; font-weight: bold; }
+        .warning { color: #ff6b6b; font-weight: bold; }
+        .page-break { page-break-after: always; }
+        @media print { body { font-size: 11pt; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Guia Didático: Google Analytics GA4</h1>
+        <p class="subtitle">Do Zero - Instruções Passo-a-Passo para Iniciantes</p>
+        
+        <div class="info-box">
+            <strong>Objetivo:</strong> Ensinar EXATAMENTE como configurar Google Analytics GA4 para seu portfólio
+            <br><strong>Nível:</strong> Iniciante (nenhum conhecimento prévio necessário)
+            <br><strong>Tempo estimado:</strong> 15-20 minutos
+        </div>
+
+        <h2>1. O que é Google Analytics?</h2>
+        <p>Google Analytics é um <strong>sistema de monitoramento de visitantes</strong>. É como ter uma câmera de segurança no seu site que registra:</p>
+        <ul>
+            <li>Quantas pessoas acessaram seu site</li>
+            <li>De onde vieram (Google, Facebook, digitaram a URL...)</li>
+            <li>Quanto tempo ficaram no site</li>
+            <li>Que dispositivo usaram (celular, computador, tablet...)</li>
+        </ul>
+
+        <h2>2. Conceitos Importantes</h2>
+        <h3>Measurement ID</h3>
+        <p>É um identificador único do seu site. Formato: <code>G-XXXXXXXXXX</code></p>
+        <p>⭐ É como uma <strong>senha de wifi</strong> - sem ela, Google Analytics não sabe qual é seu site.</p>
+
+        <h3>Property (Propriedade)</h3>
+        <p>Uma "propriedade" é uma <strong>conta para 1 website</strong>. Cada site tem sua própria Property e seu próprio Measurement ID.</p>
+
+        <h3>Data Stream</h3>
+        <p>É o <strong>canal de entrada de dados</strong> do seu website. Um Data Stream = um website.</p>
+
+        <div class="page-break"></div>
+
+        <h2>3. Passo-a-Passo Completo</h2>
+
+        <div class="step">
+            <h3>ETAPA 1: Acessar Google Analytics</h3>
+            <ol>
+                <li>Abra uma nova aba no navegador</li>
+                <li>Digite: <code>https://analytics.google.com</code></li>
+                <li>Pressione Enter</li>
+                <li>Faça login com sua conta Gmail (se solicitado)</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>ETAPA 2: Criar uma Property</h3>
+            <ol>
+                <li>Clique em <strong>"+ Criar propriedade"</strong></li>
+                <li>Preencha:
+                    <ul>
+                        <li>Nome da propriedade: <code>Lucas Leonardo Mosca - Portfolio</code></li>
+                        <li>Timezone: <code>São Paulo, Brazil</code> ou <code>America/Sao_Paulo</code></li>
+                        <li>Moeda: <code>BRL</code> (Real)</li>
+                    </ul>
+                </li>
+                <li>Clique em <strong>"Criar propriedade"</strong></li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>ETAPA 3: Criar um Data Stream (Web)</h3>
+            <ol>
+                <li>Procure por <strong>"Data Streams"</strong> na tela</li>
+                <li>Clique em <strong>"+ Adicionar fluxo"</strong></li>
+                <li>Selecione <strong>"Web"</strong></li>
+                <li>Preencha:
+                    <ul>
+                        <li>Website URL: <code>https://lucasleonardomosca-afk.github.io/portfolio/</code></li>
+                        <li>Nome do fluxo: <code>Portfolio Analytics</code></li>
+                    </ul>
+                </li>
+                <li>Clique em <strong>"Criar fluxo"</strong></li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>ETAPA 4: Copiar o Measurement ID</h3>
+            <ol>
+                <li>Procure pelo código que começa com: <code>G-</code></li>
+                <li>Exemplo: <code>G-ABC123DEF45</code></li>
+                <li>Clique no ícone de cópia (quadradinho com 2 retângulos)</li>
+                <li><span class="highlight">GUARDE ESTE ID!</span></li>
+            </ol>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="step">
+            <h3>ETAPA 5: Colocar o ID no GitHub</h3>
+            <ol>
+                <li>Abra: <code>https://github.com/lucasleonardomosca-afk/portfolio</code></li>
+                <li>Clique no arquivo <strong>index.html</strong></li>
+                <li>Clique no ícone de <strong>lápis</strong> (Edit)</li>
+                <li>Procure por: <code>G-DUMMYTEST123</code> (encontrará em 2 lugares)</li>
+                <li>Selecione e delete <code>G-DUMMYTEST123</code></li>
+                <li>Cole seu Measurement ID (Cmd+V ou Ctrl+V)</li>
+                <li>Repita para a segunda ocorrência</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>ETAPA 6: Fazer Commit (Salvar)</h3>
+            <ol>
+                <li>Desça até o final da página</li>
+                <li>Clique em <strong>"Commit changes..."</strong></li>
+                <li>Escreva: <code>Update Measurement ID with production value</code></li>
+                <li>Clique em <strong>"Commit changes"</strong></li>
+            </ol>
+            <p class="success">✅ Pronto! Seu site agora está rastreando visitantes!</p>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2>4. Verificando se Funciona</h2>
+        <div class="info-box">
+            <ol>
+                <li>Volte para Google Analytics</li>
+                <li>Procure: <strong>"Reports"</strong> ou <strong>"Relatórios"</strong></li>
+                <li>Clique em <strong>"Realtime"</strong> ou <strong>"Tempo real"</strong></li>
+                <li>Abra uma aba NOVA e visite: <code>https://lucasleonardomosca-afk.github.io/portfolio/</code></li>
+                <li>Volte para Google Analytics</li>
+                <li>Você deve ver <strong>"1 usuário ativo"</strong> (você!)</li>
+                <li><span class="success">Parabéns! Está funcionando!</span></li>
+            </ol>
+        </div>
+
+        <h2>5. Entendendo os Dados</h2>
+        <ul>
+            <li><strong>Pageviews:</strong> Quantas vezes alguém visitou seu site</li>
+            <li><strong>Usuários:</strong> Quantas pessoas diferentes visitaram</li>
+            <li><strong>Origem do Tráfego:</strong> De onde as pessoas vieram (Google, Facebook, digitaram URL...)</li>
+            <li><strong>Dispositivos:</strong> Quantos usaram celular, computador, tablet...</li>
+            <li><strong>Localização:</strong> De qual país/cidade as pessoas vieram</li>
+        </ul>
+
+        <h2>6. Problemas Comuns</h2>
+        <div class="warning">❌ "Nada está aparecendo!"</div>
+        <ul>
+            <li>Verifique se o Measurement ID está correto (sem espaços)</li>
+            <li>Atualizou AMBAS as ocorrências no index.html?</li>
+            <li>Fez commit das mudanças?</li>
+            <li>Esperou pelo menos 30 segundos?</li>
+            <li>Abriu o site em uma aba DIFERENTE?</li>
+        </ul>
+
+        <h2>7. Prazos para Ver Dados</h2>
+        <div class="info-box">
+            <strong>⏱️ Tempo real:</strong> Agora (em 30 segundos)<br>
+            <strong>📊 Dados completos:</strong> Até 24 horas<br>
+            <strong>📈 Histórico completo:</strong> Conforme seus visitantes usarem o site
+        </div>
+
+        <h2>8. Checklist Final</h2>
+        <ul>
+            <li>☑️ Criei propriedade no Google Analytics</li>
+            <li>☑️ Configurei Data Stream Web</li>
+            <li>☑️ Copiei o Measurement ID</li>
+            <li>☑️ Atualizei o index.html com o ID real</li>
+            <li>☑️ Fiz commit das alterações</li>
+            <li>☑️ Testei em tempo real e vi dados aparecerem</li>
+            <li>☑️ Aguardei 24h para dados completos aparecerem</li>
+        </ul>
+
+        <h2>9. Perguntas Frequentes</h2>
+        <p><strong>P: Preciso pagar algo?</strong><br>R: Não! Google Analytics é 100% grátis.</p>
+        <p><strong>P: Meus dados estão seguros?</strong><br>R: Sim. Google criptografa os dados.</p>
+        <p><strong>P: Quanto tempo leva para ver dados?</strong><br>R: Tempo real = 30 segundos. Dados completos = 24 horas.</p>
+        <p><strong>P: Posso acessar em qualquer lugar?</strong><br>R: Sim, em qualquer navegador, apenas com login Gmail.</p>
+
+        <div class="page-break"></div>
+
+        <h2>🎉 Conclusão</h2>
+        <div class="info-box" style="background-color: #d4edda; border-left-color: #28a745;">
+            <h3 style="color: #28a745; margin-top: 0;">Você conseguiu! 🎉</h3>
+            <p>Parabéns! Você acabou de configurar Google Analytics GA4 para seu portfólio.</p>
+            <p>Seu site agora está monitorado e você tem insights sobre quem o visita!</p>
+            <p><strong>Próximas ações:</strong></p>
+            <ul>
+                <li>Compartilhe seu portfólio para ganhar visitantes</li>
+                <li>Monitore os dados regularmente</li>
+                <li>Configure objetivos e conversões (ações específicas)</li>
+                <li>Analise tendências semanais/mensais</li>
+            </ul>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; color: #999; font-size: 0.9em;">
+            <strong>Guia criado em 7 de janeiro de 2026</strong><br>
+            Lucas Leonardo Mosca - Portfolio Analytics Setup
+        </p>
+    </div>
+</body>
+</html>
